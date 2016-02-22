@@ -2,52 +2,49 @@
 //  GameViewController.swift
 //  daix_a5
 //
-//  Created by DPC on 16/2/8.
-//  Copyright (c) 2016年 DPC. All rights reserved.
-//
+//  Title: CP 469 - Assignment5
+//  Author: Payton Dai 164177000
+//  Email: daxi7000@mylaurier.ca
+//  Created: 2016-02-19
+//  Description: implement the simplest version of the classic computer game Space Invaders. Our earth is being invaded by alien ships, it is your job as a fighter jet pilot to shoot down the invaders and save the earth.
 
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
-
-    override func viewDidLoad() {
+class GameViewController: UIViewController
+{
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed:"GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
-        }
+        
+        // Configure the view.
+        let skView = self.view as! SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        
+        // Sprite Kit applies additional optimizations to improve rendering performance
+        skView.ignoresSiblingOrder = true
+        
+        let menuScene = MenuSecne(size: view.frame.size)
+        skView.presentScene(menuScene)
     }
-
-    override func shouldAutorotate() -> Bool {
+    
+    override func shouldAutorotate() -> Bool
+    {
         return true
     }
-
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
+    {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return .AllButUpsideDown
         } else {
             return .All
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-
-    override func prefersStatusBarHidden() -> Bool {
+    
+    override func prefersStatusBarHidden() -> Bool
+    {
         return true
     }
 }

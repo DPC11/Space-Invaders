@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA4F53F51C7B652D0015B8F9 /* Level2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F53F41C7B652D0015B8F9 /* Level2Scene.swift */; };
+		EA8E1A601C79321800E67658 /* BackgroundMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8E1A5F1C79321800E67658 /* BackgroundMusic.swift */; };
+		EA8E1A621C793A2500E67658 /* Level1Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8E1A611C793A2500E67658 /* Level1Scene.swift */; };
+		EA8FA1C51C7A88EA00A533AB /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FA1C41C7A88EA00A533AB /* PhysicsCategory.swift */; };
+		EA8FA1C71C7A962800A533AB /* EndScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FA1C61C7A962800A533AB /* EndScene.swift */; };
 		EAB569C41C6929E200221B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB569C31C6929E200221B06 /* AppDelegate.swift */; };
-		EAB569C61C6929E200221B06 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAB569C51C6929E200221B06 /* GameScene.sks */; };
-		EAB569C81C6929E200221B06 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB569C71C6929E200221B06 /* GameScene.swift */; };
 		EAB569CA1C6929E200221B06 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB569C91C6929E200221B06 /* GameViewController.swift */; };
 		EAB569CD1C6929E200221B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB569CB1C6929E200221B06 /* Main.storyboard */; };
 		EAB569CF1C6929E200221B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB569CE1C6929E200221B06 /* Assets.xcassets */; };
 		EAB569D21C6929E200221B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB569D01C6929E200221B06 /* LaunchScreen.storyboard */; };
 		EAB569DD1C6929E200221B06 /* daix_a5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB569DC1C6929E200221B06 /* daix_a5Tests.swift */; };
 		EAB569E81C6929E200221B06 /* daix_a5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB569E71C6929E200221B06 /* daix_a5UITests.swift */; };
+		EAB95C8B1C77B3FE00324C1E /* MenuSecne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB95C8A1C77B3FE00324C1E /* MenuSecne.swift */; };
+		EAB95C8D1C77B60A00324C1E /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB95C8C1C77B60A00324C1E /* GuideScene.swift */; };
+		EAB95C9C1C792A1D00324C1E /* backgroundMusic.mpeg in Resources */ = {isa = PBXBuildFile; fileRef = EAB95C981C792A1D00324C1E /* backgroundMusic.mpeg */; };
+		EAB95C9D1C792A1D00324C1E /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB95C991C792A1D00324C1E /* explosion.wav */; };
+		EAB95C9E1C792A1D00324C1E /* rock.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB95C9A1C792A1D00324C1E /* rock.wav */; };
+		EAB95C9F1C792A1D00324C1E /* shoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAB95C9B1C792A1D00324C1E /* shoot.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA4F53F41C7B652D0015B8F9 /* Level2Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level2Scene.swift; sourceTree = "<group>"; };
+		EA8E1A5F1C79321800E67658 /* BackgroundMusic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundMusic.swift; sourceTree = "<group>"; };
+		EA8E1A611C793A2500E67658 /* Level1Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level1Scene.swift; sourceTree = "<group>"; };
+		EA8FA1C41C7A88EA00A533AB /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		EA8FA1C61C7A962800A533AB /* EndScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndScene.swift; sourceTree = "<group>"; };
 		EAB569C01C6929E200221B06 /* daix_a5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daix_a5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB569C31C6929E200221B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAB569C51C6929E200221B06 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		EAB569C71C6929E200221B06 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EAB569C91C6929E200221B06 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EAB569CC1C6929E200221B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAB569CE1C6929E200221B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +63,12 @@
 		EAB569E31C6929E200221B06 /* daix_a5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daix_a5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB569E71C6929E200221B06 /* daix_a5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daix_a5UITests.swift; sourceTree = "<group>"; };
 		EAB569E91C6929E200221B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAB95C8A1C77B3FE00324C1E /* MenuSecne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSecne.swift; sourceTree = "<group>"; };
+		EAB95C8C1C77B60A00324C1E /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideScene.swift; sourceTree = "<group>"; };
+		EAB95C981C792A1D00324C1E /* backgroundMusic.mpeg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = backgroundMusic.mpeg; sourceTree = "<group>"; };
+		EAB95C991C792A1D00324C1E /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
+		EAB95C9A1C792A1D00324C1E /* rock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rock.wav; sourceTree = "<group>"; };
+		EAB95C9B1C792A1D00324C1E /* shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shoot.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +120,17 @@
 			isa = PBXGroup;
 			children = (
 				EAB569C31C6929E200221B06 /* AppDelegate.swift */,
-				EAB569C51C6929E200221B06 /* GameScene.sks */,
-				EAB569C71C6929E200221B06 /* GameScene.swift */,
 				EAB569C91C6929E200221B06 /* GameViewController.swift */,
+				EAB95C8A1C77B3FE00324C1E /* MenuSecne.swift */,
+				EAB95C8C1C77B60A00324C1E /* GuideScene.swift */,
+				EA8E1A611C793A2500E67658 /* Level1Scene.swift */,
+				EA4F53F41C7B652D0015B8F9 /* Level2Scene.swift */,
+				EA8FA1C61C7A962800A533AB /* EndScene.swift */,
+				EA8E1A5F1C79321800E67658 /* BackgroundMusic.swift */,
+				EA8FA1C41C7A88EA00A533AB /* PhysicsCategory.swift */,
 				EAB569CB1C6929E200221B06 /* Main.storyboard */,
 				EAB569CE1C6929E200221B06 /* Assets.xcassets */,
+				EAB95C971C792A1D00324C1E /* Sound */,
 				EAB569D01C6929E200221B06 /* LaunchScreen.storyboard */,
 				EAB569D31C6929E200221B06 /* Info.plist */,
 			);
@@ -129,6 +153,17 @@
 				EAB569E91C6929E200221B06 /* Info.plist */,
 			);
 			path = daix_a5UITests;
+			sourceTree = "<group>";
+		};
+		EAB95C971C792A1D00324C1E /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				EAB95C981C792A1D00324C1E /* backgroundMusic.mpeg */,
+				EAB95C991C792A1D00324C1E /* explosion.wav */,
+				EAB95C9A1C792A1D00324C1E /* rock.wav */,
+				EAB95C9B1C792A1D00324C1E /* shoot.wav */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB569C61C6929E200221B06 /* GameScene.sks in Resources */,
+				EAB95C9D1C792A1D00324C1E /* explosion.wav in Resources */,
+				EAB95C9E1C792A1D00324C1E /* rock.wav in Resources */,
+				EAB95C9F1C792A1D00324C1E /* shoot.wav in Resources */,
+				EAB95C9C1C792A1D00324C1E /* backgroundMusic.mpeg in Resources */,
 				EAB569D21C6929E200221B06 /* LaunchScreen.storyboard in Resources */,
 				EAB569CF1C6929E200221B06 /* Assets.xcassets in Resources */,
 				EAB569CD1C6929E200221B06 /* Main.storyboard in Resources */,
@@ -266,9 +304,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB569C81C6929E200221B06 /* GameScene.swift in Sources */,
+				EAB95C8D1C77B60A00324C1E /* GuideScene.swift in Sources */,
+				EAB95C8B1C77B3FE00324C1E /* MenuSecne.swift in Sources */,
 				EAB569CA1C6929E200221B06 /* GameViewController.swift in Sources */,
+				EA4F53F51C7B652D0015B8F9 /* Level2Scene.swift in Sources */,
+				EA8E1A621C793A2500E67658 /* Level1Scene.swift in Sources */,
 				EAB569C41C6929E200221B06 /* AppDelegate.swift in Sources */,
+				EA8E1A601C79321800E67658 /* BackgroundMusic.swift in Sources */,
+				EA8FA1C71C7A962800A533AB /* EndScene.swift in Sources */,
+				EA8FA1C51C7A88EA00A533AB /* PhysicsCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +541,7 @@
 				EAB569EE1C6929E200221B06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAB569EF1C6929E200221B06 /* Build configuration list for PBXNativeTarget "daix_a5Tests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +550,7 @@
 				EAB569F11C6929E200221B06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAB569F21C6929E200221B06 /* Build configuration list for PBXNativeTarget "daix_a5UITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +559,7 @@
 				EAB569F41C6929E200221B06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
