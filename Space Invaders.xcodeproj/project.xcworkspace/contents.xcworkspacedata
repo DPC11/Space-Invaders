@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:daix_a5.xcodeproj">
+      location = "self:/Users/DPC/Documents/CP 469/daix_a5/Space Invaders.xcodeproj">
    </FileRef>
 </Workspace>

@@ -151,7 +151,7 @@ class Level1Scene: SKScene, SKPhysicsContactDelegate
             addChild(explosionNode)
             
             // Play explosion animation and sound then transit to level2 scene
-            explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-invader")), (SKTexture(imageNamed: "explosion2-invader"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: { [unowned self] in
+            explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-invader")), (SKTexture(imageNamed: "explosion2-invader"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: {
                 self.view?.presentScene(Level2Scene(size: self.size), transition: SKTransition.pushWithDirection(.Left, duration: 0.5))
                 })
 
@@ -166,7 +166,7 @@ class Level1Scene: SKScene, SKPhysicsContactDelegate
             addChild(explosionNode)
             
             // Play explosion animation and sound then transit to end scene
-            explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-ship")), (SKTexture(imageNamed: "explosion2-ship"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: { [unowned self] in
+            explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-ship")), (SKTexture(imageNamed: "explosion2-ship"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: {
                 self.view?.presentScene(EndScene(size: self.size, won: false), transition: SKTransition.moveInWithDirection(.Right, duration: 0.5))
                 })
         }

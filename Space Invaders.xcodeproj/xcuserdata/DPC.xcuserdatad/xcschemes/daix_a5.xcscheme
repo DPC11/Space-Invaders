@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAB569BF1C6929E200221B06"
-               BuildableName = "daix_a5.app"
-               BlueprintName = "daix_a5"
-               ReferencedContainer = "container:daix_a5.xcodeproj">
+               BuildableName = "Space Invaders.app"
+               BlueprintName = "Space Invaders"
+               ReferencedContainer = "container:Space Invaders.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAB569D71C6929E200221B06"
-               BuildableName = "daix_a5Tests.xctest"
-               BlueprintName = "daix_a5Tests"
-               ReferencedContainer = "container:daix_a5.xcodeproj">
+               BuildableName = "Space Invaders.xctest"
+               BlueprintName = "Space InvadersTests"
+               ReferencedContainer = "container:Space Invaders.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAB569E21C6929E200221B06"
-               BuildableName = "daix_a5UITests.xctest"
-               BlueprintName = "daix_a5UITests"
-               ReferencedContainer = "container:daix_a5.xcodeproj">
+               BuildableName = "Space Invaders.xctest"
+               BlueprintName = "Space InvadersUITests"
+               ReferencedContainer = "container:Space Invaders.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EAB569BF1C6929E200221B06"
-            BuildableName = "daix_a5.app"
-            BlueprintName = "daix_a5"
-            ReferencedContainer = "container:daix_a5.xcodeproj">
+            BuildableName = "Space Invaders.app"
+            BlueprintName = "Space Invaders"
+            ReferencedContainer = "container:Space Invaders.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EAB569BF1C6929E200221B06"
-            BuildableName = "daix_a5.app"
-            BlueprintName = "daix_a5"
-            ReferencedContainer = "container:daix_a5.xcodeproj">
+            BuildableName = "Space Invaders.app"
+            BlueprintName = "Space Invaders"
+            ReferencedContainer = "container:Space Invaders.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EAB569BF1C6929E200221B06"
-            BuildableName = "daix_a5.app"
-            BlueprintName = "daix_a5"
-            ReferencedContainer = "container:daix_a5.xcodeproj">
+            BuildableName = "Space Invaders.app"
+            BlueprintName = "Space Invaders"
+            ReferencedContainer = "container:Space Invaders.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -13,10 +13,11 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate
     private let offset: CGFloat = 42
     private let scale: CGFloat = 0.92
     private let shipMove: CGFloat = 15
-    private let moveInterval: CFTimeInterval = 1
+    private let moveInterval: CFTimeInterval = 0.8
     private let rockRate: UInt32 = 5   // Means invader shoot nearly a rock every 5 moveIntervals
+    private let invaderMove: CGFloat = 22
     
-    private var invaderMove: CGFloat = 22
+    private var moveRight = true
     private var lastMoveTime: CFTimeInterval = 0
     private var groundLine: CGFloat!   // The ground line of playing area
     private var shipNode: SKSpriteNode!
@@ -121,18 +122,27 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate
             if invaderNodes.count > 0 {
                 
                 // Update invaders' movement
-                if invaderNodes.first!.position.x <= CGRectGetMinX(frame) || invaderNodes.last!.position.x >= CGRectGetMaxX(frame) {
-                    invaderMove = -invaderMove
+                if invaderNodes.first!.position.x <= CGRectGetMinX(frame) {
                     
-                    enumerateChildNodesWithName(invaderNodeName, usingBlock: { [unowned self] (invaderNode: SKNode, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-                        invaderNode.position = CGPoint(x: invaderNode.position.x + self.invaderMove, y: invaderNode.position.y + self.invaderMove)
-                        })
-                } else {
-                    enumerateChildNodesWithName(invaderNodeName, usingBlock: { [unowned self] (invaderNode: SKNode, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+                    enumerateChildNodesWithName(invaderNodeName, usingBlock: { (invaderNode: SKNode, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
                         invaderNode.position.x += self.invaderMove
-                        })
+                        if !self.moveRight {
+                            invaderNode.position.y += self.invaderMove
+                        }})
+                    self.moveRight = true
+                } else if invaderNodes.last!.position.x >= CGRectGetMaxX(frame) {
+                    enumerateChildNodesWithName(invaderNodeName, usingBlock: { (invaderNode: SKNode, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+                        invaderNode.position.x -= self.invaderMove
+                        if self.moveRight {
+                            invaderNode.position.y -= self.invaderMove
+                        }})
+                    self.moveRight = false
+                } else {
+                    enumerateChildNodesWithName(invaderNodeName, usingBlock: { (invaderNode: SKNode, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+                        invaderNode.position.x += (self.moveRight ? self.invaderMove : -self.invaderMove)
+                    })
                 }
-                
+
                 // Choose one invader to shoot a rock randomly
                 if arc4random_uniform(rockRate) == 0 {
                     invaderRock(invaderNodes[Int(arc4random_uniform(UInt32(invaderNodes.count)))])
@@ -144,19 +154,24 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate
     // MARK: Physics contact delegate
     func didBeginContact(contact: SKPhysicsContact)
     {
+        // There are bugs when one shoot attack at two invaders at the same time
+        if contact.bodyA.node == nil || contact.bodyB.node == nil {
+            return
+        }
         let nodeNames = [contact.bodyA.node!.name!, contact.bodyB.node!.name!]
         
         // Ship shoot at invader
         if (nodeNames as NSArray).containsObject(invaderNodeName) {
-            contact.bodyA.node!.removeFromParent()
-            contact.bodyB.node!.removeFromParent()
             
             let explosionNode = SKSpriteNode(imageNamed: "explosion1-invader")
+            explosionNode.name = invaderNodeName
             if contact.bodyA.node!.name == invaderNodeName {
                 explosionNode.position = contact.bodyA.node!.position
             } else {
                 explosionNode.position = contact.bodyB.node!.position
             }
+            contact.bodyA.node!.removeFromParent()
+            contact.bodyB.node!.removeFromParent()
             addChild(explosionNode)
             
             // Play explosion animation and sound
@@ -167,7 +182,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate
             } else {
                 
                 // If all invaders are cleared then transit to end scene
-                explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-invader")), (SKTexture(imageNamed: "explosion2-invader"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: { [unowned self] in
+                explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-invader")), (SKTexture(imageNamed: "explosion2-invader"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: {
                     self.view?.presentScene(EndScene(size: self.size, won: true), transition: SKTransition.moveInWithDirection(.Right, duration: 0.5))
                 })
             }
@@ -182,7 +197,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate
             addChild(explosionNode)
             
             // Play explosion animation and sound and transit to end scene
-            explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-ship")), (SKTexture(imageNamed: "explosion2-ship"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: { [unowned self] in
+            explosionNode.runAction(SKAction.group([SKAction.repeatAction(SKAction.animateWithTextures([(SKTexture(imageNamed: "explosion1-ship")), (SKTexture(imageNamed: "explosion2-ship"))], timePerFrame: 0.2), count: 5), SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: true)]), completion: {
                 self.view?.presentScene(EndScene(size: self.size, won: false), transition: SKTransition.moveInWithDirection(.Right, duration: 0.5))
                 })
         }
@@ -191,14 +206,14 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate
     // MARK: Other helper functions
     func addInvaders()
     {
-        let invaderRow = 2
-        let invaderColumn = 5
+        let invaderRow = 3
+        let invaderColumn = 6
         
-        for var i = 0; i < invaderRow; i++ {
-            for var j = 0; j < invaderColumn; j++ {
-                let invaderNode = SKSpriteNode(imageNamed: "invader\(i + 1)")
+        for i in 0 ..< invaderRow {
+            for j in 0 ..< invaderColumn {
+                let invaderNode = SKSpriteNode(imageNamed: "invader\(i % 3 + 1)")
                 invaderNode.name = invaderNodeName
-                invaderNode.position = CGPoint(x: CGRectGetMidX(frame) + (CGFloat(j) - CGFloat(invaderColumn) / 2) * offset, y: CGRectGetMaxY(frame) - (CGFloat(i) * 0.5 + 1) * offset)
+                invaderNode.position = CGPoint(x: CGRectGetMidX(frame) + (CGFloat(j) - CGFloat(invaderColumn) / 2) * offset, y: CGRectGetMaxY(frame) - (CGFloat(i) * 0.8 + 1) * offset)
                 invaderNode.physicsBody = SKPhysicsBody(rectangleOfSize: invaderNode.size)
                 invaderNode.physicsBody?.categoryBitMask = PhysicsCategory.InvaderCategory
                 invaderNode.physicsBody?.collisionBitMask = PhysicsCategory.None
