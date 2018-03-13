@@ -164,7 +164,6 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate
         if (nodeNames as NSArray).containsObject(invaderNodeName) {
             
             let explosionNode = SKSpriteNode(imageNamed: "explosion1-invader")
-            explosionNode.name = invaderNodeName
             if contact.bodyA.node!.name == invaderNodeName {
                 explosionNode.position = contact.bodyA.node!.position
             } else {
