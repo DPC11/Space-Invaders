@@ -13,15 +13,15 @@ class BackgroundMusic: NSObject
     // Play and stop background music through this player singleton
     static let sharedPlayer = BackgroundMusic()
     
-    private var player: AVAudioPlayer!
-    private var playing = true
+    fileprivate var player: AVAudioPlayer!
+    fileprivate var playing = true
     
     override init()
     {
         super.init()
         
         do {
-            try player = AVAudioPlayer(contentsOfURL: NSBundle.mainBundle().URLForResource("backgroundMusic", withExtension: "mpeg")!)
+            try player = AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "backgroundMusic", withExtension: "mpeg")!)
         } catch {}
         player.numberOfLoops = -1
         player.prepareToPlay()
